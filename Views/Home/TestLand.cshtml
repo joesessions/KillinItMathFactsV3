@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <h1>3 * 5 =</h1>
+
+    <input type="text" id="answer1">
+    <button onclick="answer1()">Push dis</button>
+
+
+    <h3 id="outcome1"></h3>
+
+    <h1>7 * 8 =</h1>
+
+    <input type="text" id="answer2">
+    <button onclick="answer2()">Push dis</button>
+
+
+    <h3 id="outcome2"></h3>
+
+    @using (Html.BeginForm("PersonalMFAStore", "Home", FormMethod.Post))
+    {
+        <input type="int" id="timeReturn1" class ="form-control" />        <br />
+        <input type="int" id="timeReturn2" class ="form-control" /> <br />
+        <button type="submit" class="btn btn-block btn-primary" > Submit </button>
+
+    }
+    <script>
+            var corAnswer1 = 15;
+            var time1 = 0;
+
+
+            function answer1() {
+
+                var ans1 = document.getElementById("answer1").value;
+
+                if (ans1 == corAnswer1) {
+                    time1 = 5;
+                } else {
+                    time1 = 8;
+                }
+                document.getElementById("outcome1").innerHTML = "Time = " + time1;
+                document.getElementById("timeReturn1").value = time1;
+            }
+
+	        //Second problem
+
+            var corAnswer2 = 56;
+			var time2 = 0;
+
+			function answer2() {
+
+			    var ans2 = document.getElementById("answer2").value;
+
+			    if (ans2 == corAnswer2) {
+			        time2 = 5;
+
+			    } else {
+			        time2 = 8;
+			    }
+			    document.getElementById("outcome2").innerHTML = "Time = "+ time2;
+			    document.getElementById("timeReturn2").value = time2;
+			}
+
+    </script>
+
+
+</body>
+</html>
